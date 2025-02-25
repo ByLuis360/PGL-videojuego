@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://bowsp2kyxler1"]
+
+[ext_resource type="Texture2D" uid="uid://cp65m6ulakvaa" path="res://assets/images/player/Space.png" id="1_7ctco"]
+[ext_resource type="Script" path="res://scenes/node_2d.gd" id="1_n5sdr"]
+[ext_resource type="PackedScene" uid="uid://camxut5vw1hkj" path="res://component/player/player.tscn" id="2_2qmdr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d8776"]
+size = Vector2(1156, 34.5)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_n5sdr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3.49994, -4.50001)
+scale = Vector2(1.20521, 1.21667)
+texture = ExtResource("1_7ctco")
+
+[node name="Player" parent="." instance=ExtResource("2_2qmdr")]
+position = Vector2(-515, -242)
+scale = Vector2(1.34035, 1.21058)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1, -5)
+
+[node name="barriers" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="barriers"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="barriers/StaticBody2D"]
+position = Vector2(0, -313)
+shape = SubResource("RectangleShape2D_d8776")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="barriers"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="barriers/StaticBody2D2"]
+position = Vector2(1, 314)
+shape = SubResource("RectangleShape2D_d8776")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
