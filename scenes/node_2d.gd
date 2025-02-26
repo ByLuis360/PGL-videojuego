@@ -1,13 +1,20 @@
 extends Node2D
 
+@onready var _score_collected_label = $scoreCollected
+@onready var _main_music = $mainMusic
+
 var pre_enemyShip = preload("res://scenes/enemy_ship.tscn")
 var pre_enemyShip2 = preload("res://scenes/enemy_ship_2.tscn")
+var score_collected = 0
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func _on_ready() -> void:
+	_main_music.play()
 
+
+func add_score(points: int) -> void:
+	score_collected += points
+	_score_collected_label.text = str(score_collected)
 
 func _on_timer_timeout() -> void:
 	randomize()

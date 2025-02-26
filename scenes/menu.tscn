@@ -1,0 +1,50 @@
+
+[gd_scene load_steps=6 format=3 uid="uid://c22dw6jg1knto"]
+
+[ext_resource type="Script" path="res://node_2d.gd" id="1_nsnl7"]
+[ext_resource type="Texture2D" uid="uid://dlws1ui01ad0l" path="res://assets/images/Captura de pantalla 2025-02-25 225004.png.tres" id="2_pqlpw"]
+[ext_resource type="Texture2D" uid="uid://lm35kkts5j6k" path="res://assets/images/unnamed.png.tres" id="3_7jd47"]
+[ext_resource type="FontFile" uid="uid://c2m7wjvleoo5e" path="res://assets/fonts/PressStart2P-Regular.ttf" id="4_6ijcw"]
+[ext_resource type="AudioStream" uid="uid://bt7etk1a53sro" path="res://assets/sounds/Fire-Man-Stage-Mega-Man-Music-Extended.mp3" id="5_cqkb0"]
+
+
+[node name="menu" type="Node2D"]
+script = ExtResource("1_nsnl7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(575.5, 325)
+scale = Vector2(1.954, 1.10646)
+
+texture = ExtResource("2_4myit")
+
+[node name="Unnamed" type="Sprite2D" parent="."]
+position = Vector2(567, 143)
+texture = ExtResource("3_3cwp7")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 494.0
+offset_top = 269.0
+offset_right = 664.0
+offset_bottom = 344.0
+theme_override_fonts/font = ExtResource("4_6ijcw")
+theme_override_font_sizes/font_size = 30
+text = "PLAY
+"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 493.0
+offset_top = 354.0
+offset_right = 663.0
+offset_bottom = 429.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_6ijcw")
+theme_override_font_sizes/font_size = 30
+text = "QUIT
+"
+
+[node name="menuMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_cqkb0")
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
