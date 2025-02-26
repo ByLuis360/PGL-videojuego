@@ -54,9 +54,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
+
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	var parent = area.get_parent() 
-	if parent.is_in_group("ship1"):
-		print("Detectado ship1 correctamente")
-	elif parent.is_in_group("ship2"):
-		print("Detectado ship2 correctamente")
+	if parent.is_in_group("ship1") or parent.is_in_group("ship2"):
+		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
