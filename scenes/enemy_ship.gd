@@ -17,8 +17,8 @@ func _on_ready() -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("bullet"):
-		var level = get_parent()
-		level.add_score(30)
+		#var level = get_parent()
+		#level.add_score(30)
 		queue_free()
 		
 	
