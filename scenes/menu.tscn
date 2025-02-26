@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://cxf5f1cibbyo3"]
+
+[gd_scene load_steps=6 format=3 uid="uid://c22dw6jg1knto"]
 
 [ext_resource type="Script" path="res://node_2d.gd" id="1_nsnl7"]
-[ext_resource type="Texture2D" uid="uid://7gr8m2emoq51" path="res://assets/images/Captura de pantalla 2025-02-25 225004.png" id="2_4myit"]
-[ext_resource type="Texture2D" uid="uid://chs0bchoq47b" path="res://assets/images/unnamed.png" id="3_3cwp7"]
+[ext_resource type="Texture2D" uid="uid://dlws1ui01ad0l" path="res://assets/images/Captura de pantalla 2025-02-25 225004.png.tres" id="2_pqlpw"]
+[ext_resource type="Texture2D" uid="uid://lm35kkts5j6k" path="res://assets/images/unnamed.png.tres" id="3_7jd47"]
 [ext_resource type="FontFile" uid="uid://c2m7wjvleoo5e" path="res://assets/fonts/PressStart2P-Regular.ttf" id="4_6ijcw"]
-[ext_resource type="AudioStream" uid="uid://cnag863ejr8ri" path="res://assets/sounds/Fire-Man-Stage-Mega-Man-Music-Extended.mp3" id="5_cqkb0"]
+[ext_resource type="AudioStream" uid="uid://bt7etk1a53sro" path="res://assets/sounds/Fire-Man-Stage-Mega-Man-Music-Extended.mp3" id="5_cqkb0"]
+
 
 [node name="menu" type="Node2D"]
 script = ExtResource("1_nsnl7")
@@ -12,6 +14,7 @@ script = ExtResource("1_nsnl7")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(575.5, 325)
 scale = Vector2(1.954, 1.10646)
+
 texture = ExtResource("2_4myit")
 
 [node name="Unnamed" type="Sprite2D" parent="."]
